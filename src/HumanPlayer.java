@@ -22,6 +22,7 @@ public class HumanPlayer extends Player {
         System.out.println("Please choose Rock, Paper or Scissors (R/P/S): ");
         userInput = scnr.nextLine();
 
+        //sets values for player choice
         if (userInput.equalsIgnoreCase("r")) {
             choice = Roshambo.ROCK;
         } else if (userInput.equalsIgnoreCase("p")) {

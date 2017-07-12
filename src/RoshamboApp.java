@@ -10,7 +10,7 @@ public class RoshamboApp {
         String userName;
         String userChoice;
 
-        RockPlayer c1 = new RockPlayer();
+        RockPlayer c1 = new RockPlayer();//calls the other classes to the main
         RandomPlayer c2 = new RandomPlayer();
         HumanPlayer player = new HumanPlayer();
 
@@ -23,17 +23,19 @@ public class RoshamboApp {
             System.out.println("Who would you like to play against " + userName + "?" + " Please choose c1 or c2");
             userChoice = scnr.nextLine();
 
-            Roshambo rockChoice = c1.generateRoshambo();
+            Roshambo rockChoice = c1.generateRoshambo(); //sets each  player to enum Roshambo
             Roshambo randomChoice = c2.generateRoshambo();
             Roshambo playerSelection = player.generateRoshambo();
 
             if (userChoice.equalsIgnoreCase("c1")) {
                 System.out.println("C1: " + rockChoice);
-                System.out.println(player.getName() + ": " + playerSelection);
+                System.out.println(player.getName() + ": " + playerSelection);//use player.getName instead of username so name can
+                //be changed under HumanPlayer and if any changes are made to Player.java they will be made here as well
 
                 if (playerSelection.equals(rockChoice)) {
                     System.out.println("Draw");
-                } else if (playerSelection.toString().equalsIgnoreCase("Scissors")) {
+                } else if (playerSelection.toString().equalsIgnoreCase("Scissors")) {//toString returns a string.
+                    //without it I get an error
                     System.out.println(player.getName() + " " + "loses");
                 } else if (playerSelection.toString().equalsIgnoreCase("Paper")) {
                     System.out.println(player.getName() + " " + "wins!");
